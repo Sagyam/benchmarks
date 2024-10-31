@@ -27,6 +27,13 @@ services:
     volumes:
       - ./traces:/traces
 
+  dart:
+    container_name: benchmark-dart
+    build: ./src/dart
+    command: sh -c "strace -c -o /traces/dart-traces.txt ./dart"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
