@@ -6,10 +6,24 @@ services:
     volumes:
       - ./traces:/traces
 
+  clojure:
+    container_name: benchmark-clojure
+    build: ./src/clojure
+    command: sh -c "strace -c -o /traces/clojure-traces.txt clj clojure.clj"
+    volumes:
+      - ./traces:/traces
+
   cpp:
     container_name: benchmark-cpp-gcc
     build: ./src/cpp
     command: sh -c "strace -c -o /traces/cpp-gcc-traces.txt ./cpp-gcc"
+    volumes:
+      - ./traces:/traces
+
+  csharp:
+    container_name: benchmark-csharp
+    build: ./src/csharp
+    command: sh -c "strace -c -o /traces/csharp-traces.txt dotnet csharp.dll"
     volumes:
       - ./traces:/traces
 
