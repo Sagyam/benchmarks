@@ -1,4 +1,10 @@
 services:
+  c:
+    container_name: benchmark-c-gcc
+    build: ./src/c
+    command: sh -c "strace -c -o /traces/c-gcc-traces.txt ./c-gcc"
+    volumes:
+      - ./traces:/traces
 
   cpp:
     container_name: benchmark-cpp-gcc
