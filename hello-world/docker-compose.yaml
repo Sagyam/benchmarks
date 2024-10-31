@@ -55,6 +55,13 @@ services:
     volumes:
       - ./traces:/traces
 
+  groovy:
+    container_name: benchmark-groovy
+    build: ./src/groovy
+    command: sh -c "strace -c -o /traces/groovy-traces.txt groovy hello.groovy"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
