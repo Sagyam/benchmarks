@@ -62,6 +62,20 @@ services:
     volumes:
       - ./traces:/traces
 
+  haskell:
+    container_name: benchmark-haskell
+    build: ./src/haskell
+    command: sh -c "strace -c -o /traces/haskell-traces.txt ./haskell"
+    volumes:
+      - ./traces:/traces
+
+  java:
+    container_name: benchmark-java
+    build: ./src/java
+    command: sh -c "strace -c -o /traces/java-traces.txt java HelloWorld"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
