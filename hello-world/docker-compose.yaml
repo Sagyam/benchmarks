@@ -48,6 +48,13 @@ services:
     volumes:
       - ./traces:/traces
 
+  go:
+    container_name: benchmark-go
+    build: ./src/go
+    command: sh -c "strace -c -o /traces/go-traces.txt ./hello"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
