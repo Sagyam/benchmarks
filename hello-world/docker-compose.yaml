@@ -1,5 +1,12 @@
 services:
 
+  cpp:
+    container_name: benchmark-cpp-gcc
+    build: ./src/cpp
+    command: sh -c "strace -c -o /traces/cpp-gcc-traces.txt ./cpp-gcc"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
