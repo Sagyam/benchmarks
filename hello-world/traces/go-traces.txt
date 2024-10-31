@@ -1,22 +1,22 @@
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ------------------
- 37.74    0.000317           2       114           rt_sigaction
- 17.02    0.000143         143         1           execve
- 13.21    0.000111           5        20           mmap
-  7.86    0.000066           8         8           rt_sigprocmask
-  7.86    0.000066          22         3           clone
-  3.33    0.000028          28         1           openat
-  3.10    0.000026           5         5         1 futex
-  2.26    0.000019           3         6           fcntl
-  1.67    0.000014          14         1           write
-  1.43    0.000012           6         2           madvise
-  0.83    0.000007           7         1           read
-  0.71    0.000006           6         1           close
-  0.71    0.000006           6         1           getrlimit
-  0.71    0.000006           3         2           sigaltstack
-  0.48    0.000004           4         1           sched_getaffinity
-  0.36    0.000003           3         1           gettid
-  0.36    0.000003           3         1           arch_prctl
-  0.36    0.000003           3         1           rt_sigreturn
+  0.00    0.000000           0         1           read
+  0.00    0.000000           0         1           write
+  0.00    0.000000           0         1           close
+  0.00    0.000000           0        21           mmap
+  0.00    0.000000           0       114           rt_sigaction
+  0.00    0.000000           0         8           rt_sigprocmask
+  0.00    0.000000           0         1           rt_sigreturn
+  0.00    0.000000           0         2           madvise
+  0.00    0.000000           0         3           clone
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         6           fcntl
+  0.00    0.000000           0         1           getrlimit
+  0.00    0.000000           0         2           sigaltstack
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           gettid
+  0.00    0.000000           0         4           futex
+  0.00    0.000000           0         1           sched_getaffinity
+  0.00    0.000000           0         1           openat
 ------ ----------- ----------- --------- --------- ------------------
-100.00    0.000840           4       170         1 total
+100.00    0.000000           0       170           total

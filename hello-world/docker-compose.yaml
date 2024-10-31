@@ -76,6 +76,27 @@ services:
     volumes:
       - ./traces:/traces
 
+  node:
+    container_name: benchmark-node
+    build: ./src/js/node
+    command: sh -c "strace -c -o /traces/node-traces.txt node node.js"
+    volumes:
+      - ./traces:/traces
+
+  deno:
+    container_name: benchmark-deno
+    build: ./src/js/deno
+    command: sh -c "strace -c -o /traces/deno-traces.txt deno run deno.ts"
+    volumes:
+      - ./traces:/traces
+
+  bun:
+    container_name: benchmark-bun
+    build: ./src/js/bun
+    command: sh -c "strace -c -o /traces/bun-traces.txt bun run bun.ts"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
