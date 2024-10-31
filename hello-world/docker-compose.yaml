@@ -1,0 +1,8 @@
+services:
+
+  python:
+    container_name: benchmark-cpython
+    build: ./src/python
+    command: sh -c "strace -c -o /traces/cpython-traces.txt python3 python.py"
+    volumes:
+      - ./traces:/traces
