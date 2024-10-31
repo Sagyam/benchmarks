@@ -41,6 +41,13 @@ services:
     volumes:
       - ./traces:/traces
 
+  erlang:
+    container_name: benchmark-erlang
+    build: ./src/erlang
+    command: sh -c "strace -c -o /traces/erlang-traces.txt erl -noshell -eval "erlang.main" -s init stop"
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
