@@ -34,6 +34,13 @@ services:
     volumes:
       - ./traces:/traces
 
+  elixir:
+    container_name: benchmark-elixir
+    build: ./src/elixir
+    command: sh -c "strace -c -o /traces/elixir-traces.txt elixir -e "Elxir.hello""
+    volumes:
+      - ./traces:/traces
+
   python:
     container_name: benchmark-cpython
     build: ./src/python
