@@ -103,3 +103,80 @@ services:
     command: sh -c "strace -c -o /traces/cpython-traces.txt python3 python.py"
     volumes:
       - ./traces:/traces
+
+  julia:
+    container_name: benchmark-julia
+    build: ./src/julia
+    command: sh -c "strace -c -o /traces/julia-traces.txt julia julia.jl"
+    volumes:
+      - ./traces:/traces
+
+  kotlin:
+    container_name: benchmark-kotlin
+    build: ./src/kotlin
+    command: sh -c "strace -c -o /traces/kotlin-traces.txt java -jar kotlin.jar"
+    volumes:
+      - ./traces:/traces
+
+  lua:
+    container_name: benchmark-lua
+    build: ./src/lua
+    command: sh -c "strace -c -o /traces/lua-traces.txt lua lua.lua"
+    volumes:
+      - ./traces:/traces
+
+  perl:
+    container_name: benchmark-perl
+    build: ./src/perl
+    command: sh -c "strace -c -o /traces/perl-traces.txt perl perl.pl"
+    volumes:
+      - ./traces:/traces
+
+  php:
+    container_name: benchmark-php
+    build: ./src/php
+    command: sh -c "strace -c -o /traces/php-traces.txt php php.php"
+    volumes:
+      - ./traces:/traces
+
+  r:
+    container_name: benchmark-r
+    build: ./src/r
+    command: sh -c "strace -c -o /traces/r-traces.txt Rscript r.r"
+    volumes:
+      - ./traces:/traces
+
+  ruby:
+    container_name: benchmark-ruby
+    build: ./src/ruby
+    command: sh -c "strace -c -o /traces/ruby-traces.txt ruby ruby.rb"
+    volumes:
+      - ./traces:/traces
+
+  rust:
+    container_name: benchmark-rust
+    build: ./src/rust
+    command: sh -c "strace -c -o /traces/rust-traces.txt ./rust"
+    volumes:
+      - ./traces:/traces
+
+  scala:
+    container_name: benchmark-scala
+    build: ./src/scala
+    command: sh -c "strace -c -o /traces/scala-traces.txt scala scala.scala"
+    volumes:
+      - ./traces:/traces
+
+  swift:
+    container_name: benchmark-swift
+    build: ./src/swift
+    command: sh -c "strace -c -o /traces/swift-traces.txt ./swift"
+    volumes:
+      - ./traces:/traces
+
+  zig:
+    container_name: benchmark-zig
+    build: ./src/zig
+    command: sh -c "strace -c -o /traces/zig-traces.txt ./zig"
+    volumes:
+      - ./traces:/traces
