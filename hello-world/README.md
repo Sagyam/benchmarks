@@ -1,8 +1,8 @@
-# Hello world benchmark
+# System Call Count
 
 ## Description
-I worte a simple hello world program in different languages and measured various metrics.
-I ran the bencmarks across different version and implementations of the languages to see how they compare.
+I worte a simple hello world program in different languages and count 
+the number of system calls made by each program.
 
 ## Language
 - C
@@ -32,10 +32,3 @@ I ran the bencmarks across different version and implementations of the language
 - Scala
 - Swift
 - Zig
-
-## Metrics
-- Time
-- Memory
-- Binary Size
-- System Calls
-- CPU Usage
