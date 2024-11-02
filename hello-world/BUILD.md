@@ -190,7 +190,7 @@ strace -c ./src/swift/swift
 ```bash
 cd ./src/zig
 zig build-exe zig.zig
-strace -c -o zig-traces.txt zig
-strace -c zig
+strace -c -o zig-traces.txt ./zig
+strace -c ./zig
 cd ../..
 ```
