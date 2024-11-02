@@ -75,8 +75,6 @@ RUN mv julia-* /usr/local/julia
 RUN ln -s /usr/local/julia/bin/julia /usr/local/bin/julia
 RUN julia --version
 
-# Installing Kotlin is a mess so we will skip it for now
-
 # Lua
 RUN apt-get install -y --no-install-recommends lua5.4
 RUN lua -v
