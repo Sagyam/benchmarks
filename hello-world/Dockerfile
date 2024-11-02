@@ -24,7 +24,7 @@ RUN clojure --version
 
 
 # CSharp
-RUN apt-get install -y --no-install-recommends dotnet-sdk-8.0
+RUN apt-get install -y --no-install-recommends dotnet-sdk-9.0
 RUN dotnet --version
 
 # Dart
@@ -119,7 +119,11 @@ RUN apt-get install -y --no-install-recommends scala
 RUN scala -version
 
 # Swift
-RUN apt-get install -y --no-install-recommends swift
+RUN curl -sL https://download.swift.org/swift-6.0.2-release/ubuntu2404/swift-6.0.2-RELEASE/swift-6.0.2-RELEASE-ubuntu24.04.tar.gz -o swift.tar.gz
+RUN tar zxvf swift.tar.gz
+RUN mv swift-6.0.2-RELEASE-ubuntu24.04 /usr/local/swift
+ENV PATH="/usr/local/swift/usr/bin:${PATH}"
+RUN swift --version
 
 # Zig
 RUN curl -sSf https://ziglang.org/download/0.12.0/zig-linux-x86_64-0.12.0.tar.xz -o zig.tar.xz
